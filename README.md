@@ -1,6 +1,6 @@
 ## Unapplied Activist Codes SQL Query
 
-This SQL query retrieves unapplied activist codes from Phoenix. Unapplied activist codes are those for which there are no associated records in the related table.
+This SQL query retrieves unapplied activist codes from Phoenix (BigQuery). Unapplied activist codes are those for which there are no associated records in the related table.
 
 ## Prerequisites
 
