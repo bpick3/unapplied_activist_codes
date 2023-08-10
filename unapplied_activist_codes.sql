@@ -10,10 +10,10 @@ WITH Common AS (
         a.datetime_created,
         extract(date from max(b.datetime_modified)) AS last_date_applied,
         count(distinct b.myv_van_id) AS qty
-    FROM 'demsutsp.vansync.activist_codes' a
-    LEFT JOIN 'demsutsp.vansync.contacts_activist_codes_myv' b ON a.activist_code_id = b.activist_code_id
-    JOIN 'demsutsp.vansync.committees_activist_codes' cac ON a.created_by_committee_id = cac.committee_id
-    JOIN 'demsutsp.vansync.committees' c ON cac.committee_id = c.committee_id
+    FROM 'demsXXsp.vansync.activist_codes' a
+    LEFT JOIN 'demsXXsp.vansync.contacts_activist_codes_myv' b ON a.activist_code_id = b.activist_code_id
+    JOIN 'demsXXsp.vansync.committees_activist_codes' cac ON a.created_by_committee_id = cac.committee_id
+    JOIN 'demsXXsp.vansync.committees' c ON cac.committee_id = c.committee_id
     GROUP BY a.activist_code_id, a.activist_code_name, a.activist_code_description, a.is_active, a.report_question, a.created_by_committee_id, a.datetime_created, c.committee_name
     HAVING qty IS NULL OR qty = 0
     AND a.is_active = true
